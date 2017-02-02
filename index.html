@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Marko</title>
+	<style>
+		body {
+			background: green;
+			overflow: hidden
+		}
+
+		.road {
+			background: linear-gradient(#525252, #464646);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 50px;
+		}
+
+		.alfa {
+			position: absolute;
+    	bottom: 20px;
+			animation: moveCar 2s 3s forwards;
+			z-index: 20;
+		}
+
+		.wheel-back {
+			position: absolute;
+			left: 26px;
+			bottom: 0px;
+			animation: moveWheel 0.35s 2.7s linear infinite forwards;
+		}
+
+		.wheel-front {
+			position: absolute;
+			right: 60px;
+			bottom: 0;
+			animation: moveWheel 0.35s 2.7s linear infinite forwards;
+		}
+
+		@keyframes moveCar {
+			from {left: 30px;}
+			to {left: 50%;}
+		}
+
+		@keyframes moveWheel {
+			from {transform: rotate(0deg);}
+			to {transform: rotate(360deg);}
+		}
+
+		.komparz {
+			position: absolute;
+			bottom: 120px;
+			right: -20%;
+			height: 300px;
+			animation: moveKomparz 3s 12s linear infinite forwards;
+		}
+
+		@keyframes moveKomparz {
+			from {right: -20%;}
+			to {right: 1000%;}
+		}
+
+		.work {
+			position: absolute;
+			bottom: 200px;
+			right: -50%;
+			animation: moveWork 10s 4s linear forwards;
+		}
+
+		@keyframes moveWork {
+			from {right: -50%;}
+			to {right: 1000%;}
+		}
+
+		.Marko {
+			position: absolute;
+			opacity: 1;
+			bottom: 10px;
+			left: 10px;
+			height: 280px;
+			z-index: 30;
+			animation: moveMarkoLeft 0.5s 0.5s linear forwards,
+								 moveMarkoBehind 0.1s 1s linear forwards,
+								 moveMarkoRight 1.5s 1s linear forwards,
+								 animHide 0.2s 2.5s linear forwards;
+		}
+
+		@keyframes moveMarkoLeft {
+			from {left: 10px;}
+			to {left: -100px;}
+		}
+
+		@keyframes moveMarkoRight {
+			from {left: -100px;}
+			to {left: 200px;}
+		}
+
+		@keyframes moveMarkoBehind {
+			from {z-index: 30;}
+			to {z-index: 10;}
+		}
+
+		.text {
+			opacity: 0;
+			position: absolute;
+			top: 40%;
+			width: 400px;
+			font-size: 20px;
+			line-height: 1.5;
+			background: black;
+			color: white;
+			padding: 1em;
+			animation: animShow 0.5s 0.5s linear forwards, animHide 0.5s 2.6s linear forwards;
+		}
+
+		.text p {
+			margin: 0 0 1em;
+		}
+
+		@keyframes animShow {
+			from {opacity: 0;}
+			to {opacity: 1;}
+		}
+
+		@keyframes animHide {
+			from {opacity: 1;}
+			to {opacity: 0;}
+		}
+	</style>
+</head>
+<body>
+	<div class="road"></div>
+	<div class="text">
+		<p>Ahoj. Som Marko, grafik, reklamny demigod, interierovy designer and such. Kamarati ma volaju hovno. Som kto som, neda sa s tym nic spravit. Lalalala, mozete ma za to aj zabit.</p>
+		<p>
+			<b>Podte, ukazem vam svoju pracu</b>
+		</p>
+	</div>
+	<img src="marko.png" alt="" class="Marko">
+	<img src="komparz.png" alt="" class="komparz">
+	<img src="work.png" alt="" class="work">
+	<div class="alfa">
+		<img src="alfa.png" alt="">
+		<img src="wheel.png" alt="" class="wheel-back">
+		<img src="wheel.png" alt="" class="wheel-front">
+	</div>
+</body>
+</html>
